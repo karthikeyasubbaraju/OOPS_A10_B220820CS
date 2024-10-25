@@ -1,2 +1,1 @@
-# olab24
-NITC O Lab 24
+# OOPS Assignment 10
