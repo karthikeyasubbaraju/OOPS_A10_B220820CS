@@ -2,7 +2,7 @@ package oldshelf;
 
 public class OldSelection {
 
-	// TODO: Complete this method.
+	// DONE: Complete this method.
 	/**
 	 * 
 	 * @param o object
@@ -11,16 +11,33 @@ public class OldSelection {
 	 */
 	public static String getAgeOrTitle(Object o) {
 		
-		if (o instanceof Book) {
-			
+		if (o instanceof Comic c) {
+			return c.getTitle();	
 		}
-		return null;
+		if( o instanceof Fiction f ){
+			return f.getName();
+		}
+		if( o instanceof TextBook t){
+			return t.subject();
+		}
+		return "";
 	}
 
 	public static void main(String[] args) {
-		
-		// TODO: Write a test code here and execute and text.
-		TextBook t = new TextBook();
+
+		// DONE: Write a test code here and execute and text.
+		TextBook t = new TextBook("Physics");
+
+		System.out.println(OldSelection.getAgeOrTitle(t));
+
+		Comic c = new Comic("Invincible",18);
+
+		System.out.println(OldSelection.getAgeOrTitle(c));
+
+		Fiction f = new Fiction("The Nun",FictionType.GoK);
+
+		System.out.println(OldSelection.getAgeOrTitle(f));
+	
 		
 	}
 }
