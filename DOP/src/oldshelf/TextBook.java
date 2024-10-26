@@ -18,8 +18,8 @@ public class TextBook extends Book {
 
 	@Override
 	public final int hashCode(){
-		int m = 165;
-		int c = 30;
+		int m = 200;
+		int c = 40;
 		return m*subject.length() + c;
 	}
 
