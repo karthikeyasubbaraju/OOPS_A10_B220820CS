@@ -25,13 +25,8 @@ public class NewSelection {
 		Comic c = new Comic("Gintama",26);
 		Fiction f = new Fiction("The 100",FictionType.Tragedy);
 		
-
 		System.out.println(NewSelection.getAgeOrTitle(c));
 		System.out.println(NewSelection.getAgeOrTitle(t));
-		System.out.println(NewSelection.getAgeOrTitle(f));
-	
-		
-	
-		
+		System.out.println(NewSelection.getAgeOrTitle(f));		
 	}
 }
