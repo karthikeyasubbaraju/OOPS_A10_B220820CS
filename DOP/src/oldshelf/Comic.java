@@ -1,24 +1,18 @@
 package oldshelf;
 
 public class Comic extends Book {
-
 	/* DONE: Add most strict modifiers here*/ 
 	private final String Title;
-
 	// DONE: Warning to be removed.
-	private final int ageOfMainCharacter;
+	private final int age;
 
 	// DONE Correct the error
-	public Comic(String Title,int ageOfMainCharacter) {
+	public Comic(String Title,int age) {
 		this.Title = Title;
-		this.ageOfMainCharacter = ageOfMainCharacter;
+		this.age = age;
 	}
-	
-	// DONE : create a getter if required.
-	
-	
+	// DONE : create a getter if required	
 	// DONE: Create a setter if required
-
 	// DONE: write a toString method
 	@Override
 	public String toString() {
@@ -26,11 +20,9 @@ public class Comic extends Book {
 		String s1 = "Age of Main Character : " + this.getAgeOfMainCharacter();
 		return s + "\n" + s1;
 	}
-
 	public String getTitle() {
 		return Title;
 	}
-
 	public int getAgeOfMainCharacter() {
 		return ageOfMainCharacter;
 	}
@@ -39,11 +31,8 @@ public class Comic extends Book {
 	@Override
 	public int hashCode() {
 		return Integer.hashCode(ageOfMainCharacter);
-
-		}
-
-		// DONE: Fill up an arbitrary hash method that takes into account only the age of main characted and the Strign title
-	
+	}
+	// DONE: Fill up an arbitrary hash method that takes into account only the age of main characted and the Strign titl
 	// DONE: Bonus: 
 	@Override
 	public boolean equals(Object o) {
