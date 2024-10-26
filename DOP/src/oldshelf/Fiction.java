@@ -15,14 +15,10 @@ public class Fiction extends Book {
 		Fiction.type = f;
 		// DONE  correct the above.
 	}
-
 	public String getName() {
 		return name;
 	}
 	public static FictionType getType() {
 		return type;
 	}
-
-	
-
 }
