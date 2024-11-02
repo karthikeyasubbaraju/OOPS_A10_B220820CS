@@ -31,15 +31,15 @@ public class OldSelection {
 	public static void main(String[] args) {
 
 		// DONE: Write a test code here and execute and text.
-		TextBook t = new TextBook("Physics");
+		TextBook t = new TextBook("MATH");
 
 		System.out.println(OldSelection.getAgeOrTitle(t));
 
-		Comic c = new Comic("Invincible",18);
+		Comic c = new Comic("INCREDIBLES",18);
 
 		System.out.println(OldSelection.getAgeOrTitle(c));
 
-		Fiction f = new Fiction("The Nun",FictionType.GoK);
+		Fiction f = new Fiction("The FATHOM OF DEAD",FictionType.GoK);
 
 		System.out.println(OldSelection.getAgeOrTitle(f));
 	}
