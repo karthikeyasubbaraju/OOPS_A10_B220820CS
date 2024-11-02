@@ -1,50 +1,29 @@
-package oldshelf;
+package newshelf;
 
-public class OldSelection {
+import oldshelf.FictionType;
 
-	// DONE: Complete this method.
-	/**
-	 * 
-	 * @param o object
-	 * returns if o is not a book, returns empty string, if Comic, returns title, of Fiction
-	 * returns name, and if TextBook, returns subject.
-	 */
-	public static String getAgeOrTitle(Object o) {
-		
-		return switch(o){
-			case TextBook t -> t.subject();
-			case Comic c -> c.getTitle();
-			case Fiction f -> f.getName();
-			default -> "";
-		}
-		
-		// if (o instanceof Comic c) {
-		// 	return c.getTitle();	
-		// }
-		// if( o instanceof Fiction f ){
-		// 	return f.getName();
-		// }
-		// if( o instanceof TextBook t){
-		// 	return t.subject();
-		// }
-		// return "";
-	}
+public class NewSelection {
 
-	public static void main(String[] args) {
+    public static String getAgeOrTitle(Object o) {
+        return switch (o) {
+            case Comic c -> c.title();
+            case Fiction f when f.type() == FictionType.Tragedy -> "Tragic: " + f.name(); // Example of using `when` for Fiction
+            case Fiction f -> f.name();
+            case TextBook t -> t.subject();
+            default -> "Empty";
+        };
+    }
 
-		// DONE: Write a test code here and execute and text.
-		TextBook t = new TextBook("Physics");
+    public static void main(String[] args) {
+        // Testing with different types
+        TextBook t = new TextBook("Chemistry");
+        Comic c = new Comic("Gintama", 26);
+        Fiction f1 = new Fiction("The 100", FictionType.Tragedy);
+        Fiction f2 = new Fiction("The Catcher in the Rye", FictionType.Drama);
 
-		System.out.println(OldSelection.getAgeOrTitle(t));
-
-		Comic c = new Comic("Invincible",18);
-
-		System.out.println(OldSelection.getAgeOrTitle(c));
-
-		Fiction f = new Fiction("The Nun",FictionType.GoK);
-
-		System.out.println(OldSelection.getAgeOrTitle(f));
-	
-		
-	}
+        System.out.println(NewSelection.getAgeOrTitle(c));   // Expected: "Gintama"
+        System.out.println(NewSelection.getAgeOrTitle(t));   // Expected: "Chemistry"
+        System.out.println(NewSelection.getAgeOrTitle(f1));  // Expected: "Tragic: The 100" (because of the `when` clause)
+        System.out.println(NewSelection.getAgeOrTitle(f2));  // Expected: "The Catcher in the Rye"
+    }
 }
