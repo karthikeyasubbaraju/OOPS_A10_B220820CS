@@ -14,12 +14,6 @@ public class Comic extends Book {
 	// DONE : create a getter if required	
 	// DONE: Create a setter if required
 	// DONE: write a toString method
-	@Override
-	public String toString() {
-		String s = "Title : " + this.getTitle();
-		String s1 = "Age of Main Character : " + this.getAgeOfMainCharacter();
-		return s + "\n" + s1;
-	}
 	public String getTitle() {
 		return Title;
 	}
@@ -27,6 +21,12 @@ public class Comic extends Book {
 		return ageOfMainCharacter;
 	}
 
+	@Override
+	public String toString() {
+		String s = "Title : " + this.getTitle();
+		String s1 = "Age of Main Character : " + this.getAgeOfMainCharacter();
+		return s + "\n" + s1;
+	}
 	// DONE: Bonus: 
 	@Override
 	public int hashCode() {
